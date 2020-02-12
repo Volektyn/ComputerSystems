@@ -58,7 +58,6 @@ if __name__ == "__main__":
         print(f"File Name: {fileName}\n")
         resultPath = os.path.abspath(textFile).replace(fileName, "")
         
-        #if ("gz" in fileName):
         if (fileName.endswith(".gz")):
             with gzip.open(textFile, 'rb') as compressedFile:
                 inputText = compressedFile.read()
