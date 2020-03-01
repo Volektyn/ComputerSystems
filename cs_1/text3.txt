@@ -1,0 +1,62 @@
+3.2.  Structure of the PPP
+
+   This section describes the basic model of PPP used in developing the
+   PPP MIB. This information should be useful to the implementor in
+   understanding some of the basic design decisions of the MIB.
+
+   The PPP is not one single protocol but a large family of protocols.
+   Each of these is, in itself, a fairly complex protocol.  The PPP
+   protocols may be divided into three rough categories:
+
+   Control Protocols
+      The Control Protocols are used to control the operation of the
+      PPP. The Control Protocols include the Link Control Protocol
+      (LCP), the Password Authentication Protocol (PAP), the Link
+      Quality Report (LQR), and the Challenge Handshake Authentication
+      Protocol (CHAP).
+
+   Network Protocols
+      The Network Protocols are used to move the network traffic over
+      the PPP interface.  A Network Protocol encapsulates the datagrams
+      of a specific higher-layer protocol that is using the PPP as a
+      data link.  Note that within the context of PPP, the term "Network
+      Protocol" does not imply an OSI Layer-3 protocol; for instance,
+      there is a Bridging network protocol.
+
+   Network Control Protocols (NCPs)
+      The NCPs are used to control the operation of the Network
+      Protocols. Generally, each Network Protocol has its own Network
+      Control Protocol; thus, the IP Network Protocol has its IP Control
+      Protocol, the Bridging Network Protocol has its Bridging Network
+      Control Protocol and so on.
+
+   This document specifies the objects used in managing one of these
+   protocols, namely the IP Network Control Protocol.
+
+3.3.  MIB Groups
+
+   Objects in this MIB are arranged into several MIB groups.  Each group
+   is organized as a set of related objects.
+
+   These groups are the basic unit of conformance: if the semantics of a
+   group are applicable to an implementation then all objects in the
+   group must be implemented.
+
+   The PPP MIB is organized into several MIB Groups, including, but not
+   limited to, the following groups:
+
+          o The PPP Link Group
+          o The PPP LQR Group
+          o The PPP LQR Extensions Group
+          o The PPP IP Group
+          o The PPP Bridge Group
+          o The PPP Security Group
+
+   This document specifies the following group:
+
+   The PPP IP Group
+      The PPP IP Group contains configuration, status, and control
+      variables that apply to the operation of IP over PPP.
+
+      Implementation of this group is mandatory for all implementations
+      of PPP that support IP over PPP.
